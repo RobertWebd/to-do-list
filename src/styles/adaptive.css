@@ -1,0 +1,16 @@
+@media (max-width: 1300px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content__menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .content__menu button {
+    width: 45%;
+    margin: 5px;
+  }
+}

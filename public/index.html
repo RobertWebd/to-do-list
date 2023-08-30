@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <link rel="stylesheet" href="/src/styles/minimize.css" />
+    <link rel="stylesheet" href="/src/styles/toast.css" />
+    <link rel="stylesheet" href="/src/styles/adaptive.css" />
+    <title>Todushka</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="settings">
+        <div class="content__menu menu">
+            <button class="evenBtn">Highlight even</button>
+            <button class="oddBtn">Highlight odd</button>
+            <button class="deleteFirstEl">Delete first task</button>
+            <button class="deleteLastEl">Delete last task</button>
+        </div>
+        <div class="content__createEl create">
+          <div class="create__header">
+            <input type="text" placeholder="Task name" class="create__title"></input>
+            <input type="date" class="create__date"></input>
+          </div>
+          <input type="text" placeholder="Description" class="create__description"></input>
+          <button class="title__addBtn" id="addElement">Add</button>
+        </div>
+      </div>
+      <div class="todoList">
+        <div class="content__title title">
+          <div class="title__header">To Do List</div>
+        </div>
+        <div class="content__list">
+        </div>
+      </div>
+      <div class="toast__pageLocation"></div>
+    </div>
+    <script type='module' src="/src/scripts/index.js"></script>
+  </body>
+</html>

@@ -29,9 +29,6 @@ addElementBtn.addEventListener('click', () => {
     todos.push(todo);
     cacheTodos(todos);
     addTask(todo);
-    document.querySelector('.content__list').lastElementChild.classList.add('task__show');
-
-
   } else {
     toggleBorder(invalidFields);
     showToast(Errors.EmptyFields);
@@ -48,7 +45,10 @@ document.addEventListener('click', (e) => {
     todos = todos.filter((todo) => todo.id !== Number(taskId));
     cacheTodos(todos);
 
-    task.remove();
+    task.classList.add('task-delete');
+    setTimeout(() => {
+      task.remove();
+    }, 200);
   }
 });
 
@@ -62,3 +62,19 @@ btnDeleteLast.addEventListener('click', () => handleDeleteElem('last', todos));
 
 evenBtn.addEventListener('click', handleHighlightEven);
 oddBtn.addEventListener('click', handleHighlightOdd);
+
+document.addEventListener('click', (e) => {
+  const target = e.target;
+  if (target.className === 'task__copmlete') {
+    const task = target.closest('.task');
+    const taskParent = document.querySelector('.content__list');
+
+    if (target.checked) {
+      taskParent.append(task);
+      task.style.opacity = '0.5';
+    } else {
+      taskParent.prepend(task);
+      task.style.opacity = '1';
+    }
+  }
+});

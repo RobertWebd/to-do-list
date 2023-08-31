@@ -1,7 +1,7 @@
 export const getToastComponent = (error, id) => {
   return `<div id='toast-${id}' class="toast__wrapper">
       <div class="toast__content">
-        <img class="content__icon"  src="/src/icons/remove.png">
+        <img class="content__icon" src="/to-do-list/src/icons/remove.png">
         <div class="content__text text">
           <div class="text__header">Error</div>
           <div class="text__subText">${error}</div>

@@ -6,6 +6,6 @@ export const getTaskComponent = ({ id, title, description, date }) => {
               <div class="task__desciption">${description}</div>
             </div>
             <div class="task__date">${date}</div>
-            <img class="task__delete" src="/src/icons/trashIcon.png">
+            <img class="task__delete" src="/to-do-list/src/icons/trashIcon.png">
           </div>`;
 };

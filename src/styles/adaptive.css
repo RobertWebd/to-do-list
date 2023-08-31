@@ -13,4 +13,13 @@
     width: 45%;
     margin: 5px;
   }
+
+  .content__list {
+    padding-bottom: 25px;
+  }
+
+  .settings,
+  .todoList {
+    height: 50%;
+  }
 }

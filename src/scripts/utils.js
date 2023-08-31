@@ -1,10 +1,8 @@
 import { getTaskComponent } from './templates/taskComponent.js';
-import { cacheTodos, getCachedTodos } from './todos.js';
+import { NumberType } from './constans.js';
 
-const todoList = document.querySelector('.content__list');
-
-export const addTask = (todo) => {
-  todoList.insertAdjacentHTML('beforeend', getTaskComponent(todo));
+export const addTask = (todo, todoList) => {
+  todoList.insertAdjacentHTML('afterbegin', getTaskComponent(todo));
 };
 
 export const toggleBorder = (elems, toggle = true) => {
@@ -28,54 +26,15 @@ export const validateFields = (fields) => {
   };
 };
 
-const elemsList = todoList.children;
+export const getHighlightOptions = (type) => ({
+  startIndex: type === NumberType.Odd ? 0 : 1,
+  state: false,
+});
 
-let isEvenHighlighted = false;
-let isOddHighlighted = false;
-
-const toggleBackground = (elem, flag = true) => {
+export const toggleBackground = (elem, flag = true) => {
   if (flag) {
     elem.style.backgroundColor = '#373846';
   } else {
     elem.style.backgroundColor = '';
-  }
-};
-
-export const handleHighlightEven = () => {
-  Array.from(elemsList).forEach((task, index) => {
-    if (index % 2 !== 0) {
-      if (isEvenHighlighted) {
-        toggleBackground(task, false);
-      } else {
-        toggleBackground(task);
-      }
-    }
-  });
-  isEvenHighlighted = !isEvenHighlighted;
-};
-
-export const handleHighlightOdd = () => {
-  Array.from(elemsList).forEach((task, index) => {
-    if (index % 2 === 0) {
-      if (isOddHighlighted) {
-        toggleBackground(task, false);
-      } else {
-        toggleBackground(task);
-      }
-    }
-  });
-  isOddHighlighted = !isOddHighlighted;
-};
-
-export const handleDeleteElem = (position, elem) => {
-  if (elem.length !== 0) {
-    if (position === 'first') {
-      elem.shift();
-      todoList.firstElementChild.remove();
-    } else {
-      elem.pop();
-      todoList.lastElementChild.remove();
-    }
-    cacheTodos(elem);
   }
 };

@@ -6,7 +6,7 @@
 
 body {
   overflow: hidden;
-  background-color: #12141c;
+  background-color: rgb(30, 30, 40);
 }
 
 button {
@@ -61,7 +61,7 @@ input::placeholder {
 
 .content__menu button {
   transition: 0.2s ease-in-out;
-  background-color: #cf3ec5;
+  background-color: rgb(103, 106, 124);
 }
 
 .content__menu button:hover {
@@ -79,12 +79,12 @@ input::placeholder {
   padding: 20px;
   flex: 1 0 auto;
   border-radius: 5px;
-  box-shadow: 0 0 5px 5px rgba(113, 0, 117, 0.3);
+  background-color: rgb(103, 106, 124);
 }
 
 .title__addBtn {
   flex: 0 0 auto;
-  background-color: #cf3ec5;
+  background-color: rgb(103, 106, 124);
   width: 15%;
 }
 
@@ -140,7 +140,7 @@ input::placeholder {
   transition: 0.2s ease;
 }
 
-.task__copmlete,
+.task__complete,
 .task__delete {
   cursor: pointer;
 }
@@ -163,22 +163,26 @@ input::placeholder {
 @keyframes show-todo {
   0% {
     transform: translateY(-75px);
+    opacity: 0;
   }
   100% {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes delete-todo {
   0%{
     transform: scale(1);
+    opacity: 1;
   }
   100%{
     transform: scale(0);
+    opacity: 0;
   }
 }
 
-.task__copmlete {
+.task__complete {
   transform: scale(1.3);
   margin: 10px;
 }

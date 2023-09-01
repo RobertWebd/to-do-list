@@ -97,13 +97,12 @@ const handleCheckTodo = (e) => {
   if (target.className !== 'task__complete') return;
 
   const task = target.closest('.task');
-  const taskParent = document.querySelector('.content__list');
 
   if (target.checked) {
-    taskParent.append(task);
+    todoList.append(task);
     task.style.opacity = '0.5';
   } else {
-    taskParent.prepend(task);
+    todoList.prepend(task);
     task.style.opacity = '1';
   }
 };

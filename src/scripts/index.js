@@ -98,7 +98,7 @@ const handleCheckTodo = (e) => {
   if (target.className !== 'task__complete') return;
 
   const task = target.closest('.task');
-  const index = todos.findIndex((todo) => (todo.title = target.nextElementSibling.firstElementChild.textContent));
+  const index = todos.findIndex((todo) => todo.title === target.nextElementSibling.firstElementChild.textContent);
 
   if (target.checked) {
     todos[index].checked = true;

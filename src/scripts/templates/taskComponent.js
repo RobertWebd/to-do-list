@@ -1,6 +1,6 @@
-export const getTaskComponent = ({ id, title, description, date }) => {
-  return `<div id=${id} class="task">
-            <input type="checkbox" class="task__complete">
+export const getTaskComponent = ({ id, title, description, date, checked }) => {
+  return `<div id=${id} class='task' ${checked && `style= opacity:0.5`}>
+            <input type="checkbox" class="task__complete" ${checked && `checked=${checked}`}}>
             <div class='task__header'>
               <div class="task__title">${title}</div>
               <div class="task__desciption">${description}</div>

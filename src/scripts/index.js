@@ -64,6 +64,7 @@ const handleAddTodo = () => {
       title: title.value,
       description: description.value,
       date: formatDate(date.value),
+      checked: false,
     };
 
     todos.push(todo);
@@ -97,14 +98,19 @@ const handleCheckTodo = (e) => {
   if (target.className !== 'task__complete') return;
 
   const task = target.closest('.task');
+  const index = todos.findIndex((todo) => (todo.title = target.nextElementSibling.firstElementChild.textContent));
 
   if (target.checked) {
+    todos[index].checked = true;
     todoList.append(task);
     task.style.opacity = '0.5';
   } else {
+    todos[index].checked = false;
     todoList.prepend(task);
     task.style.opacity = '1';
   }
+
+  cacheTodos(todos);
 };
 
 document.addEventListener('click', handleDeleteTodo);

@@ -102,10 +102,12 @@ const handleCheckTodo = (e) => {
 
   if (target.checked) {
     todos[index].checked = true;
+    todos.unshift(...todos.splice(index, 1));
     todoList.append(task);
     task.style.opacity = '0.5';
   } else {
     todos[index].checked = false;
+    todos.push(...todos.splice(index, 1));
     todoList.prepend(task);
     task.style.opacity = '1';
   }
